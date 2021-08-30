@@ -20,7 +20,7 @@ As a manager, I want to generate a webpage that displays<br /> my team's basic i
 <a href="#how-to-download"><strong>Explore the docs »</strong></a>
 <br />
 <br />
-<a href="https://drive.google.com/file/d/1lLEGGnbQOLWZt-uXQtJRtzhNLsrP4_oO/view?usp=sharing">View Demo</a>
+<a href="https://drive.google.com/file/d/1KKqqR7dyTjwi98L1fbJG8xMbcPeMMjwl/view?usp=sharing">View Demo</a>
 .
 <a href="https://github.com/Derimarg/team-profile-generator/issues">Report Bug</a>
 ·
@@ -165,7 +165,7 @@ For additional help or questions about collaboration, contact me at: charminvida
 
 - Linkedin - [Derimar Gray](https://www.linkedin.com/in/derimar-gray-676275132/)
 - Project Repository Link: https://github.com/Derimarg/team-profile-generator
-- Walkthrough video link: https://drive.google.com/file/d/1lLEGGnbQOLWZt-uXQtJRtzhNLsrP4_oO/view?usp=sharing
+- Walkthrough video link: https://drive.google.com/file/d/1KKqqR7dyTjwi98L1fbJG8xMbcPeMMjwl/view?usp=sharing
 
 [Back To Top](#team-profile-generator)
 
