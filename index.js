@@ -243,7 +243,7 @@ Generating Team Profile, please wait....`);
             fs.writeFileSync(outputPath, render(teamArr), 'utf-8');
 
             // create copy of style file
-            fs.copyFile('./src/style.css', './dist/style.css', err => {
+            fs.copyFile('./assets/css/style.css', './dist/style.css', err => {
                 if (err) {
                     reject(err);
                     return;
