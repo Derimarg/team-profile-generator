@@ -242,6 +242,14 @@ Generating Team Profile, please wait....`);
             // create html file
             fs.writeFileSync(outputPath, render(teamArr), 'utf-8');
 
+            // create copy of style file
+            fs.copyFile('./src/style.css', './dist/style.css', err => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+            });
+
             console.log(`
 ================================================================
 ======= Creation of team profile successfully completed! =======
