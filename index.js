@@ -16,9 +16,9 @@ const idArr = [];
 // Start application
 function startTeam() {
     console.log(`
-=========================================
-======= Starting to create a team =======
-=========================================
+==============================================
+======= START TO CREATE A TEAM PROFILE =======
+==============================================
 
 `);
 
@@ -77,12 +77,12 @@ function startTeam() {
             const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
             teamArr.push(manager);
             idArr.push(answers.managerId);
-            addTeam();
+            menu();
         });
     }
 
-    // addTeam function after finish with addManager
-    function addTeam() {
+    // menu list section
+    function menu() {
         console.log(`
     >>>>>>> MENU OF TEAM >>>>>>>
         
@@ -90,12 +90,12 @@ function startTeam() {
         inquirer.prompt([
             {
                 type: 'list',
-                name: 'memberChoice',
+                name: 'categoriesList',
                 message: 'Select a category of member:',
                 choices: ['Engineer', 'Intern', 'End application']
             }
-        ]).then(userChoice => {
-            switch (userChoice.memberChoice) {
+        ]).then(categories => {
+            switch (categories.categoriesList) {
                 case 'Engineer':
                     addEngineer();
                     break;
@@ -108,7 +108,7 @@ function startTeam() {
         });
     }
 
-    // add an Engineer when selected
+    // engineer section
     function addEngineer() {
         console.log(`
         
@@ -164,11 +164,11 @@ function startTeam() {
             const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
             teamArr.push(engineer);
             idArr.push(answers.engineerId);
-            addTeam();
+            menu();
         });
     }
 
-    // Add an Intern when selected
+    // intern section
     function addIntern() {
         console.log(`
     >>>>>>> INTERN INFORMATION SECTION >>>>>>>
@@ -224,27 +224,29 @@ function startTeam() {
             const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
             teamArr.push(intern);
             idArr.push(answers.internId);
-            addTeam();
+            menu();
         });
     }
 
+    // Generate files section
     function generateFiles() {
-
-        // Create dist directory for index.html if it doesnt exist
-        if (!fs.existsSync(DIST_DIR)) {
-            fs.mkdirSync(DIST_DIR)
-        }
         console.log(`
         
 Generating Team Profile, please wait....`);
-        fs.writeFileSync(outputPath, render(teamArr), 'utf-8');
 
         const timer = setTimeout(() => {
+            // Create dist folder
+            if (!fs.existsSync(DIST_DIR)) {
+                fs.mkdirSync(DIST_DIR)
+            }
+            // create html file
+            fs.writeFileSync(outputPath, render(teamArr), 'utf-8');
+
             console.log(`
 ================================================================
 ======= Creation of team profile successfully completed! =======
 =======                                                  =======
-======= Follow directory: ./dist/index.html              =======
+======= Follow directory: ./dist                         =======
 ================================================================
 
 `);
